@@ -294,12 +294,12 @@ nav h1 a {
   	margin-left:5px;
   }
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 800px) {
 	ul#restaurants-list li p {
 		font-size: 1.1rem
 	}
 }
-@media screen and (min-width: 750px) and (max-width: 12500px) {
+@media screen and (min-width: 801px) {
 	#restaurants-list {
 		display: flex;
 		flex-wrap: wrap;

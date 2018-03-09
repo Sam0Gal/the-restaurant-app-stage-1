@@ -41,7 +41,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 }
 #footer {
   background-color: #444;
-  color: #aaa;
+  color: #e0e0e0;
   font-size: 8pt;
   letter-spacing: 1px;
   padding: 25px;
@@ -325,4 +325,21 @@ nav h1 a {
 	#restaurants-list li p {
 		font-size: 1.3rem
 	}
+}
+
+/*=====================For Accessibility==================*/
+#restaurants-list li a {
+	color: black;
+}
+#restaurants-list li h1 {
+	color: #00496b;
+}
+#restaurants-list li a:hover, #restaurants-list li a:focus {
+	background-color: #22d175;
+	text-decoration: underline;
+	transition: background-color .2s ease-out;
+}
+select:hover, select:focus {
+	outline: 5px solid #2caf02;
+	transition: outline .2s ease;
 }

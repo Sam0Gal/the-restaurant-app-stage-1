@@ -155,6 +155,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = imageUrl+'_small.jpg';
+  image.alt = `${restaurant.name} restaurant`;
   picture.append(image);
 
   const name = document.createElement('h1');
@@ -190,3 +191,8 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 }
+
+// Add title attribute for the iframe
+window.onload = function() {
+  document.querySelector('iframe').title = 'a google map for restaurants locations.';
+};

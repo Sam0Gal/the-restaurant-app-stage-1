@@ -150,6 +150,15 @@ createRestaurantHTML = (restaurant) => {
   const img_source2 = document.createElement('source');
   img_source2.srcset = `${imageUrl}_small.jpg, ${imageUrl}_small2x.jpg 2x, ${imageUrl}_small2x.jpg 3x`
   
+  const img_source3 = document.createElement('source');
+  img_source3.media = '(min-width: 700px) and (max-width: 800px)';
+  img_source3.srcset = `${imageUrl}_small2x.webp`;
+
+  const img_source4 = document.createElement('source');
+  img_source4.srcset = `${imageUrl}_small.webp, ${imageUrl}_small2x.webp 2x, ${imageUrl}_small2x.webp 3x`
+  
+  picture.append(img_source3); // 3 and 4 for browsers that supports  webp formats
+  picture.append(img_source4);
   picture.append(img_source1);
   picture.append(img_source2);
 

@@ -340,6 +340,6 @@ nav h1 a {
 	transition: background-color .2s ease-out;
 }
 select:hover, select:focus {
-	outline: 5px solid #2caf02;
+	outline: 3px solid #a5d005;
 	transition: outline .2s ease;
 }

@@ -139,6 +139,7 @@ createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
 
   const picture = document.createElement('picture');
+  picture.setAttribute('tabindex', '0'); // make images accessible.
   li.append(picture);
   let imageUrl = DBHelper.imageUrlForRestaurant(restaurant);
   
@@ -155,18 +156,21 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = imageUrl+'_small.jpg';
-  image.alt = `${restaurant.name} restaurant`;
+  image.alt = `${restaurant.name} restaurant image`;
   picture.append(image);
 
   const name = document.createElement('h1');
+  name.setAttribute('tabindex', '0'); // make it accessible for screen readers.
   name.innerHTML = restaurant.name;
   li.append(name);
 
   const neighborhood = document.createElement('p');
+  neighborhood.setAttribute('tabindex', '0'); // make it accessible for screen readers.
   neighborhood.innerHTML = restaurant.neighborhood;
   li.append(neighborhood);
 
   const address = document.createElement('p');
+  address.setAttribute('tabindex', '0'); // make it accessible for screen readers.
   address.innerHTML = restaurant.address;
   li.append(address);
 
@@ -191,8 +195,27 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 }
+// For Accessibility
+// remove focus from google map for screen reader and keyboard users.
+document.querySelector('a').addEventListener('keydown', skipMap);
+document.querySelector('select').addEventListener('keydown', skipMap2);
 
-// Add title attribute for the iframe
-window.onload = function() {
-  document.querySelector('iframe').title = 'a google map for restaurants locations.';
-};
+function skipMap(e) {
+  if (e.keyCode === 9) {
+    if (e.shiftKey) {
+      document.querySelector('#footer a').focus();
+    } else {
+      document.querySelector('select').focus();
+    }
+  }
+  e.preventDefault();
+}
+
+function skipMap2(e) {
+  if (e.keyCode === 9) {
+    if (e.shiftKey) {
+      document.querySelector('a').focus();
+      e.preventDefault();
+    }
+  }
+}

@@ -335,7 +335,7 @@ nav h1 a {
 	color: #00496b;
 }
 #restaurants-list li a:hover, #restaurants-list li a:focus {
-	background-color: #22d175;
+	background-color: #1E598A;
 	text-decoration: underline;
 	transition: background-color .2s ease-out;
 }

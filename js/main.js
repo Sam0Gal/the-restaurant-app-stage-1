@@ -228,3 +228,14 @@ function skipMap2(e) {
     }
   }
 }
+// The Service Worker
+if (navigator.serviceWorker) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .then(function(reg) {
+        console.log('service worker registeration successful!');
+      }, function(err) {
+        console.log('service worker registeration failed.');
+      });
+  });
+}

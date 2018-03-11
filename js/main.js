@@ -139,7 +139,6 @@ createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
 
   const picture = document.createElement('picture');
-  picture.setAttribute('tabindex', '0'); // make images accessible.
   li.append(picture);
   let imageUrl = DBHelper.imageUrlForRestaurant(restaurant);
   
@@ -169,17 +168,14 @@ createRestaurantHTML = (restaurant) => {
   picture.append(image);
 
   const name = document.createElement('h1');
-  name.setAttribute('tabindex', '0'); // make it accessible for screen readers.
   name.innerHTML = restaurant.name;
   li.append(name);
 
   const neighborhood = document.createElement('p');
-  neighborhood.setAttribute('tabindex', '0'); // make it accessible for screen readers.
   neighborhood.innerHTML = restaurant.neighborhood;
   li.append(neighborhood);
 
   const address = document.createElement('p');
-  address.setAttribute('tabindex', '0'); // make it accessible for screen readers.
   address.innerHTML = restaurant.address;
   li.append(address);
 

@@ -144,17 +144,22 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 createReviewHTML = (review) => {
   const li = document.createElement('li');
   li.setAttribute('tabindex', '0'); // Make it accessible.
+
+  const reviewer = document.createElement('div');
+  reviewer.className = 'reviewer';
+  li.appendChild(reviewer);
+
   const name = document.createElement('p');
   name.innerHTML = review.name;
-  li.appendChild(name);
+  reviewer.appendChild(name);
 
   const date = document.createElement('p');
   date.innerHTML = review.date;
-  li.appendChild(date);
+  reviewer.appendChild(date);
 
   const rating = document.createElement('p');
   rating.innerHTML = `Rating: ${review.rating}`;
-  li.appendChild(rating);
+  reviewer.appendChild(rating);
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;

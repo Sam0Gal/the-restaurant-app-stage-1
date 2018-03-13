@@ -143,14 +143,14 @@ createRestaurantHTML = (restaurant) => {
   let imageUrl = DBHelper.imageUrlForRestaurant(restaurant);
   
   const img_source1 = document.createElement('source');
-  img_source1.media = '(min-width: 700px) and (max-width: 800px)';
+  img_source1.media = '(min-width: 600px) and (max-width: 700px)';
   img_source1.srcset = `${imageUrl}_small2x.jpg`;
 
   const img_source2 = document.createElement('source');
   img_source2.srcset = `${imageUrl}_small.jpg, ${imageUrl}_small2x.jpg 2x, ${imageUrl}_small2x.jpg 3x`
   
   const img_source3 = document.createElement('source');
-  img_source3.media = '(min-width: 700px) and (max-width: 800px)';
+  img_source3.media = '(min-width: 600px) and (max-width: 700px)';
   img_source3.srcset = `${imageUrl}_small2x.webp`;
 
   const img_source4 = document.createElement('source');
@@ -167,8 +167,9 @@ createRestaurantHTML = (restaurant) => {
   image.alt = `${restaurant.name} restaurant image`;
   picture.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h3');
   name.innerHTML = restaurant.name;
+  name.setAttribute('tabindex', '0');
   li.append(name);
 
   const neighborhood = document.createElement('p');
@@ -201,7 +202,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 }
 // For Accessibility
-// remove focus from google map for screen reader and keyboard users.
+// remove focus from google map for keyboard users.
 document.querySelector('a').addEventListener('keydown', skipMap);
 document.querySelector('select').addEventListener('keydown', skipMap2);
 

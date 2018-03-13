@@ -1,4 +1,4 @@
-let CACHE_NAME = 'cache-v1'
+let CACHE_NAME = 'cache-v5'
 let URLs = [
     '/',
     '/css/styles.css',

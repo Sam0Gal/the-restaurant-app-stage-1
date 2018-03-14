@@ -75,6 +75,7 @@ nav h1 a {
 /* Display list items side by side */
 #breadcrumb li {
     display: inline;
+    font-size: 15pt;
 }
 
 /* Add a slash symbol (/) before/behind each list item */
@@ -271,14 +272,11 @@ nav h1 a {
   display: block;
   list-style-type: none;
   margin: 0 0 30px;
-  overflow: hidden;
-  padding: 0 5px 20px;
+  padding: 0 5px;
   position: relative;
-  width: 105%;
+  background-color: #e8f4f2;
 }
-#reviews-list li p {
-  margin: 0 0 10px;
-}
+
 #restaurant-hours td {
   color: #666;
 }
@@ -311,14 +309,13 @@ nav h1 a {
 	}
 	#restaurants-list li h3 {
 		padding-left: 10px;
-		font-size: 1.2rem;
+		font-size: 1.5rem;
 		text-align: center;
 	}
 }
 @media screen and (min-width: 1251px) {
 	main {
-		margin-left: 4%;
-		margin-right: 4%;
+	padding-left: 8px;
 	}
 	#restaurants-list li {
 		flex-basis: 32%;
@@ -328,7 +325,7 @@ nav h1 a {
 	}
 	.filter-options h2,
 	#restaurants-list li p {
-		font-size: 1.3rem;
+		font-size: 1.5rem;
 	}
 }
 
@@ -355,7 +352,7 @@ select:hover, select:focus {
         position: relative;
         top: 130px;
     }
-    nav:first-of-type a {
+    .inside nav:first-of-type a {
         font-size: 1rem;
     }
     #breadcrumb li {
@@ -386,6 +383,12 @@ select:hover, select:focus {
     #reviews-container p{
         font-size: 1.5rem;
     }
+    #reviews-list li {
+  		width: 105%;
+  	}
+    #reviews-list li p {
+  		margin: 0 0 10px;
+	}
     footer {
         width: 95%;
         font-size: 1em;
@@ -401,10 +404,7 @@ select:hover, select:focus {
     .inside #map-container {
       background: blue none repeat scroll 0 0;
       position: absolute;
-      width: 49%;
-      height: 40%;
-      top: 100px;
-      right: 60px;
+      top: 45px;
     }
     .inside #map {
       height: 100%;
@@ -417,12 +417,14 @@ select:hover, select:focus {
     }
     #restaurant-container {
       width: 50%;
+      margin-top: 75px;
     }
     #reviews-container {
-        width: 70%;
+        width: 90%;
     }
     #reviews-container * {
-        font-size: 12pt;
+        font-size: 15pt;
+        padding-left: 8%;
     }
     .inside table * {
         font-size: 1.3rem;
@@ -433,6 +435,38 @@ select:hover, select:focus {
     .inside #footer {
       bottom: -55px;
       position: relative;
-      width: 100%;
+      width: 98.9%;
     }
+}
+@media screen and (min-width: 801px) and (max-width: 1200px) {
+	.inside #map-container {
+		right: 0;
+		width: 50%;
+      	height: 40%;
+	}
+}
+@media screen and (min-width: 1201px) and (max-width: 1801px) {
+    .inside #map-container {
+      width: 54%;
+      height: 46%;
+      right: 0px;
+    }
+}
+@media screen and (min-width: 1801px) {
+    .inside #map-container {
+      width: 54%;
+      height: 52%;
+      right: 0px;
+    }
+}
+@media screen and (min-width: 1500px) {
+	#reviews-container ul {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0;
+	}
+	#reviews-container li{
+		width: 45%;
+		margin-left: 50px;
+	}
 }
